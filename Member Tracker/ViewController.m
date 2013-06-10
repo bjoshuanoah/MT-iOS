@@ -14,10 +14,19 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    NSString *urlAddress = @"http://www.membertracker.co";
+    
+    //Create a URL object.
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    //URL Requst Object
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    
+    //Load the request in the UIWebView.
+    [_memTrackerView loadRequest:requestObj];
 }
 
 - (void)didReceiveMemoryWarning
